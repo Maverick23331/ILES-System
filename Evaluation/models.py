@@ -11,7 +11,7 @@ class Evaluation(models.Model):
     evaluated_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"Evaluation for {self.student}"
+        return f"Evaluation for {self.student}" 
 
 class EvaluationCriteria(models.Model):
     name = models.CharField(max_length=255)

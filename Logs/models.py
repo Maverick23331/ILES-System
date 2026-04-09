@@ -55,4 +55,3 @@ class WorklogEvaluation(models.Model):
     
 
     
-    
