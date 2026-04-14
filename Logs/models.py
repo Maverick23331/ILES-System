@@ -53,5 +53,3 @@ class WorklogEvaluation(models.Model):
     feedback = models.TextField()
     evaluated_at = models.DateTimeField(auto_now_add=True)
     
-
-    
