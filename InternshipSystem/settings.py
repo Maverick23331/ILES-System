@@ -25,7 +25,19 @@ SECRET_KEY = 'django-insecure-z7s@+x@l1l)!wwz^xyg%+=1ux0tr@$@&sep7)-q_+bryfqkek#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://localhost:5174',
+    'http://127.0.0.1:5174',
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
@@ -38,19 +50,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
     'Accounts.apps.AccountsConfig',
     'Students.apps.StudentsConfig',
     'Organisations.apps.OrganisationsConfig',
     'Internships.apps.InternshipsConfig',
     'Logs.apps.LogsConfig',
     'Evaluation.apps.EvaluationConfig',
-    'rest_framework',
-    
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
